@@ -1,0 +1,122 @@
+[
+  {
+    "user_id": "C001",
+    "credit_score": 745,
+    "monthly_income": 7200,
+    "debt": 15000,
+    "risk_status": "low",
+    "last_updated": "2026-06-01"
+  },
+  {
+    "user_id": "C002",
+    "credit_score": 680,
+    "monthly_income": 5400,
+    "debt": 22000,
+    "risk_status": "medium",
+    "last_updated": "2026-06-02"
+  },
+  {
+    "user_id": "C003",
+    "credit_score": 790,
+    "monthly_income": 9100,
+    "debt": 8000,
+    "risk_status": "low",
+    "last_updated": "2026-06-03"
+  },
+  {
+    "user_id": "C004",
+    "credit_score": 610,
+    "monthly_income": 4300,
+    "debt": 38000,
+    "risk_status": "high",
+    "last_updated": "2025-10-10"
+  },
+  {
+    "user_id": "C005",
+    "credit_score": 720,
+    "monthly_income": 8300,
+    "debt": 18000,
+    "risk_status": "low",
+    "last_updated": "2026-06-04"
+  },
+  {
+    "user_id": "C006",
+    "credit_score": null,
+    "monthly_income": 6100,
+    "debt": 14000,
+    "risk_status": "unknown",
+    "last_updated": "2026-06-04"
+  },
+  {
+    "user_id": "C007",
+    "credit_score": 655,
+    "monthly_income": 4800,
+    "debt": 26000,
+    "risk_status": "medium",
+    "last_updated": "2026-06-05"
+  },
+  {
+    "user_id": "C008",
+    "credit_score": 701,
+    "monthly_income": 6900,
+    "debt": 12000,
+    "risk_status": "low",
+    "last_updated": "2026-06-06"
+  },
+  {
+    "user_id": "C009",
+    "credit_score": 850,
+    "monthly_income": 10500,
+    "debt": 5000,
+    "risk_status": "low",
+    "last_updated": "2026-06-07"
+  },
+  {
+    "user_id": "C010",
+    "credit_score": 590,
+    "monthly_income": 3900,
+    "debt": 42000,
+    "risk_status": "high",
+    "last_updated": "2026-06-08"
+  },
+  {
+    "user_id": "C012",
+    "credit_score": 720,
+    "monthly_income": "6500",
+    "debt": 19000,
+    "risk_status": "low",
+    "last_updated": "06/09/2026"
+  },
+  {
+    "user_id": "C015",
+    "credit_score": 675,
+    "monthly_income": 5100,
+    "debt": -500,
+    "risk_status": "medium",
+    "last_updated": "2026-06-09"
+  },
+  {
+    "user_id": "",
+    "credit_score": 705,
+    "monthly_income": 5800,
+    "debt": 9000,
+    "risk_status": "low",
+    "last_updated": "2026-06-10"
+  },
+  {
+    "user_id": "C016",
+    "credit_score": 910,
+    "monthly_income": 6200,
+    "debt": 11000,
+    "risk_status": "low",
+    "last_updated": "2026-06-10"
+  },
+  {
+    "user_id": "C017",
+    "credit_score": 640,
+    "monthly_income": 4700,
+    "debt": 23000,
+    "risk_status": "critical",
+    "last_updated": "not-a-date"
+  }
+]

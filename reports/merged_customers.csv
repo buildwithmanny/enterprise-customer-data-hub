@@ -1,0 +1,14 @@
+customer_id,name,email,phone,address,status,monthly_income,credit_score,debt,risk_status,total_orders,lifetime_value,last_purchase,last_ticket,ticket_status,customer_sentiment,support_priority,has_sales_record,has_finance_record,has_support_record
+C001,John Smith,john.smith@email.com,949-555-0101,"123 Main St, Irvine, CA",active,7200,745,15000,low,12,2450.75,2026-05-25,T1001,resolved,positive,low,True,True,True
+C002,Sarah Johnson,sarah.johnson@email.com,714-555-0102,"456 Oak Ave, Anaheim, CA",active,5400,680,22000,medium,5,875.5,2026-05-20,T1002,open,neutral,medium,True,True,True
+C003,Michael Brown,michael.brown@email.com,562-555-0103,"789 Pine Rd, Long Beach, CA",active,9100,790,8000,low,18,5320.0,2026-06-01,T1003,resolved,positive,low,True,True,True
+C004,Emily Davis,emily.davis@email.com,949-555-0104,"321 Beach Blvd, Huntington Beach, CA",inactive,4300,610,38000,high,2,199.99,2025-11-18,T1004,closed,negative,high,True,True,True
+C005,David Wilson,david.wilson@email.com,310-555-0105,"654 Sunset Blvd, Los Angeles, CA",active,8300,720,18000,low,28,9240.25,2026-06-06,T1005,open,negative,high,True,True,True
+C006,Lisa Martinez,lisa.martinez@email.com,951-555-0106,"987 Canyon Dr, Riverside, CA",active,6100,,14000,unknown,9,1650.0,2026-05-30,T1006,pending,neutral,medium,True,True,True
+C007,Robert Taylor,robert.taylor@email.com,909-555-0107,"246 Mountain View, Ontario, CA",active,4800,655,26000,medium,14,3100.4,2026-06-02,T1007,resolved,positive,low,True,True,True
+C008,Jennifer Anderson,jennifer.anderson@email.com,,"135 Harbor Dr, Newport Beach, CA",active,6900,701,12000,low,3,425.75,2026-04-15,T1008,open,neutral,medium,True,True,True
+C009,James Thomas,james.thomas@email.com,9495550109,"777 Corporate Dr, Irvine, CA",active,10500,850,5000,low,21,6780.9,2026-06-07,T1009,resolved,positive,low,True,True,True
+C010,Maria Garcia,maria.garcia@email.com,714-555-0110,"888 Garden Grove Boulevard, Garden Grove, CA",active,3900,590,42000,high,7,1200.0,2026-05-29,T1011,pending,neutral,medium,True,True,True
+C012,Amanda White,amanda.whiteemail.com,949-555-0112,"200 Technology Dr, Irvine, CA",active,6500,720,19000,low,,,,T1013,resolved,positive,low,False,True,True
+C013,Daniel Harris,daniel.harris@email.com,555-INVALID,"12 Lake View, Santa Ana, CA",active,,,,,10,2500.0,06/08/2026,,,,,True,False,False
+C014,,missing.name@email.com,949-555-0114,"450 Market St, Costa Mesa, CA",active,,,,,-2,-150.0,2026-06-01,,,,,True,False,False

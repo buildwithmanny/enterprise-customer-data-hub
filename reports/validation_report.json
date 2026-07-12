@@ -1,0 +1,201 @@
+{
+  "datasets": [
+    {
+      "dataset": "crm",
+      "total_records": 15,
+      "valid_records": 9,
+      "invalid_records": 6,
+      "total_errors": 7,
+      "errors": [
+        {
+          "row": 9,
+          "record_id": "C008",
+          "field": "phone",
+          "issue": "Missing required value",
+          "value": ""
+        },
+        {
+          "row": 10,
+          "record_id": "C009",
+          "field": "phone",
+          "issue": "Invalid phone format; expected ###-###-####",
+          "value": "9495550109"
+        },
+        {
+          "row": 13,
+          "record_id": "missing",
+          "field": "customer_id",
+          "issue": "Missing required value",
+          "value": ""
+        },
+        {
+          "row": 14,
+          "record_id": "C012",
+          "field": "email",
+          "issue": "Invalid email format",
+          "value": "amanda.whiteemail.com"
+        },
+        {
+          "row": 14,
+          "record_id": "C012",
+          "field": "last_updated",
+          "issue": "Invalid date format; expected YYYY-MM-DD",
+          "value": "06/11/2026"
+        },
+        {
+          "row": 15,
+          "record_id": "C013",
+          "field": "phone",
+          "issue": "Invalid phone format; expected ###-###-####",
+          "value": "555-INVALID"
+        },
+        {
+          "row": 16,
+          "record_id": "C014",
+          "field": "name",
+          "issue": "Missing required value",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "dataset": "sales",
+      "total_records": 15,
+      "valid_records": 12,
+      "invalid_records": 3,
+      "total_errors": 4,
+      "errors": [
+        {
+          "row": 13,
+          "record_id": "C013",
+          "field": "last_purchase",
+          "issue": "Invalid date format; expected YYYY-MM-DD",
+          "value": "06/08/2026"
+        },
+        {
+          "row": 14,
+          "record_id": "C014",
+          "field": "total_orders",
+          "issue": "Must be a non-negative integer",
+          "value": "-2"
+        },
+        {
+          "row": 14,
+          "record_id": "C014",
+          "field": "lifetime_value",
+          "issue": "Must be a non-negative number",
+          "value": "-150.00"
+        },
+        {
+          "row": 16,
+          "record_id": "C015",
+          "field": "total_orders",
+          "issue": "Missing required value",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "dataset": "finance",
+      "total_records": 15,
+      "valid_records": 9,
+      "invalid_records": 6,
+      "total_errors": 8,
+      "errors": [
+        {
+          "row": 6,
+          "record_id": "C006",
+          "field": "credit_score",
+          "issue": "Missing required value",
+          "value": null
+        },
+        {
+          "row": 11,
+          "record_id": "C012",
+          "field": "monthly_income",
+          "issue": "Must be a non-negative number",
+          "value": "6500"
+        },
+        {
+          "row": 11,
+          "record_id": "C012",
+          "field": "last_updated",
+          "issue": "Invalid date format; expected YYYY-MM-DD",
+          "value": "06/09/2026"
+        },
+        {
+          "row": 12,
+          "record_id": "C015",
+          "field": "debt",
+          "issue": "Must be a non-negative number",
+          "value": -500
+        },
+        {
+          "row": 13,
+          "record_id": "missing",
+          "field": "user_id",
+          "issue": "Missing required value",
+          "value": ""
+        },
+        {
+          "row": 14,
+          "record_id": "C016",
+          "field": "credit_score",
+          "issue": "Must be an integer between 300 and 850",
+          "value": 910
+        },
+        {
+          "row": 15,
+          "record_id": "C017",
+          "field": "risk_status",
+          "issue": "Invalid risk status",
+          "value": "critical"
+        },
+        {
+          "row": 15,
+          "record_id": "C017",
+          "field": "last_updated",
+          "issue": "Invalid date format; expected YYYY-MM-DD",
+          "value": "not-a-date"
+        }
+      ]
+    },
+    {
+      "dataset": "support",
+      "total_records": 15,
+      "valid_records": 13,
+      "invalid_records": 2,
+      "total_errors": 3,
+      "errors": [
+        {
+          "row": 15,
+          "record_id": "unknown.customer@email.com",
+          "field": "support_priority",
+          "issue": "Invalid support priority",
+          "value": "urgent"
+        },
+        {
+          "row": 16,
+          "record_id": "T1015",
+          "field": "email",
+          "issue": "Missing required value",
+          "value": ""
+        },
+        {
+          "row": 16,
+          "record_id": "T1015",
+          "field": "last_updated",
+          "issue": "Invalid date format; expected YYYY-MM-DD",
+          "value": "06/12/2026"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_datasets": 4,
+    "total_records": 60,
+    "valid_records": 43,
+    "invalid_records": 17,
+    "total_errors": 22
+  }
+}

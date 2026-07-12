@@ -1,0 +1,16 @@
+email,last_ticket,ticket_status,customer_sentiment,support_priority,last_updated
+john.smith@email.com,T1001,resolved,positive,low,2026-05-20
+sarah.johnson@email.com,T1002,open,neutral,medium,2026-06-02
+michael.brown@email.com,T1003,resolved,positive,low,2026-05-30
+emily.davis@email.com,T1004,closed,negative,high,2025-11-14
+david.wilson@email.com,T1005,open,negative,high,2026-06-05
+lisa.martinez@email.com,T1006,pending,neutral,medium,2026-06-03
+robert.taylor@email.com,T1007,resolved,positive,low,2026-05-29
+jennifer.anderson@email.com,T1008,open,neutral,medium,2026-06-06
+james.thomas@email.com,T1009,resolved,positive,low,2026-06-07
+maria.garcia@email.com,T1010,open,negative,high,2026-06-08
+maria.garcia@email.com,T1011,pending,neutral,medium,2026-06-09
+kevin.lee@email.com,T1012,open,negative,high,2026-06-10
+amanda.white@email.com,T1013,resolved,positive,low,2026-06-11
+unknown.customer@email.com,T1014,open,negative,urgent,2026-06-11
+,T1015,open,neutral,medium,06/12/2026

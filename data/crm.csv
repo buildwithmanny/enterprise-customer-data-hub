@@ -1,0 +1,16 @@
+customer_id,name,email,phone,address,status,last_updated
+C001,John Smith,john.smith@email.com,949-555-0101,"123 Main St, Irvine, CA",active,2026-06-01
+C002,Sarah Johnson,sarah.johnson@email.com,714-555-0102,"456 Oak Ave, Anaheim, CA",active,2026-06-03
+C003,Michael Brown,michael.brown@email.com,562-555-0103,"789 Pine Rd, Long Beach, CA",active,2026-05-28
+C004,Emily Davis,emily.davis@email.com,949-555-0104,"321 Beach Blvd, Huntington Beach, CA",inactive,2025-12-15
+C005,David Wilson,david.wilson@email.com,310-555-0105,"654 Sunset Blvd, Los Angeles, CA",active,2026-06-05
+C006,Lisa Martinez,lisa.martinez@email.com,951-555-0106,"987 Canyon Dr, Riverside, CA",active,2026-06-04
+C007,Robert Taylor,robert.taylor@email.com,909-555-0107,"246 Mountain View, Ontario, CA",active,2026-06-02
+C008,Jennifer Anderson,jennifer.anderson@email.com,,"135 Harbor Dr, Newport Beach, CA",active,2026-06-06
+C009,James Thomas,james.thomas@email.com,9495550109,"777 Corporate Dr, Irvine, CA",active,2026-06-07
+C010,Maria Garcia,maria.garcia@email.com,714-555-0110,"888 Garden Grove Blvd, Garden Grove, CA",active,2026-06-08
+C010,Maria Garcia,maria.garcia@email.com,714-555-0110,"888 Garden Grove Boulevard, Garden Grove, CA",active,2026-06-09
+,Kevin Lee,kevin.lee@email.com,626-555-0111,"100 Valley Blvd, Pasadena, CA",active,2026-06-10
+C012,Amanda White,amanda.whiteemail.com,949-555-0112,"200 Technology Dr, Irvine, CA",active,06/11/2026
+C013,Daniel Harris,daniel.harris@email.com,555-INVALID,"12 Lake View, Santa Ana, CA",active,2026-06-11
+C014,,missing.name@email.com,949-555-0114,"450 Market St, Costa Mesa, CA",active,2026-06-12
