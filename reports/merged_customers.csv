@@ -12,3 +12,6 @@ C010,Maria Garcia,maria.garcia@email.com,714-555-0110,"888 Garden Grove Boulevar
 C012,Amanda White,amanda.whiteemail.com,949-555-0112,"200 Technology Dr, Irvine, CA",active,6500,720,19000,low,,,,T1013,resolved,positive,low,False,True,True
 C013,Daniel Harris,daniel.harris@email.com,555-INVALID,"12 Lake View, Santa Ana, CA",active,,,,,10,2500.0,06/08/2026,,,,,True,False,False
 C014,,missing.name@email.com,949-555-0114,"450 Market St, Costa Mesa, CA",active,,,,,-2,-150.0,2026-06-01,,,,,True,False,False
+C018,Linda Chen,linda.chen@email.com,949-555-0118,"99 New Harbor Rd, Irvine, CA",active,7600,735,12000,low,6,1800.0,2026-06-12,T1017,open,neutral,high,True,True,True
+C019,Marcus Reed,marcus.reedemail.com,714-555-0119,"55 Central Ave, Orange, CA",active,,,,,3,725.0,2026-06-13,T1018,pending,negative,high,True,False,True
+C020,Olivia Parker,olivia.parker@email.com,949-555-0120,"700 New Coast Hwy, Laguna Beach, CA",active,6800,710,17000,low,10,2750.0,2026-06-15,T1019,resolved,positive,low,True,True,True

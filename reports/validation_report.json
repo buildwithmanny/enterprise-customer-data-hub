@@ -2,10 +2,10 @@
   "datasets": [
     {
       "dataset": "crm",
-      "total_records": 15,
-      "valid_records": 9,
-      "invalid_records": 6,
-      "total_errors": 7,
+      "total_records": 21,
+      "valid_records": 12,
+      "invalid_records": 9,
+      "total_errors": 10,
       "errors": [
         {
           "row": 9,
@@ -55,15 +55,36 @@
           "field": "name",
           "issue": "Missing required value",
           "value": ""
+        },
+        {
+          "row": 17,
+          "record_id": "C018",
+          "field": "email",
+          "issue": "Invalid email format",
+          "value": "linda.chenemail.com"
+        },
+        {
+          "row": 19,
+          "record_id": "C019",
+          "field": "email",
+          "issue": "Invalid email format",
+          "value": "marcus.reedemail.com"
+        },
+        {
+          "row": 22,
+          "record_id": "missing",
+          "field": "customer_id",
+          "issue": "Missing required value",
+          "value": ""
         }
       ]
     },
     {
       "dataset": "sales",
-      "total_records": 15,
-      "valid_records": 12,
-      "invalid_records": 3,
-      "total_errors": 4,
+      "total_records": 20,
+      "valid_records": 16,
+      "invalid_records": 4,
+      "total_errors": 5,
       "errors": [
         {
           "row": 13,
@@ -92,15 +113,22 @@
           "field": "total_orders",
           "issue": "Missing required value",
           "value": ""
+        },
+        {
+          "row": 21,
+          "record_id": "missing",
+          "field": "customer_number",
+          "issue": "Missing required value",
+          "value": ""
         }
       ]
     },
     {
       "dataset": "finance",
-      "total_records": 15,
-      "valid_records": 9,
-      "invalid_records": 6,
-      "total_errors": 8,
+      "total_records": 19,
+      "valid_records": 12,
+      "invalid_records": 7,
+      "total_errors": 9,
       "errors": [
         {
           "row": 6,
@@ -157,13 +185,20 @@
           "field": "last_updated",
           "issue": "Invalid date format; expected YYYY-MM-DD",
           "value": "not-a-date"
+        },
+        {
+          "row": 19,
+          "record_id": "missing",
+          "field": "user_id",
+          "issue": "Missing required value",
+          "value": null
         }
       ]
     },
     {
       "dataset": "support",
-      "total_records": 15,
-      "valid_records": 13,
+      "total_records": 20,
+      "valid_records": 18,
       "invalid_records": 2,
       "total_errors": 3,
       "errors": [
@@ -193,9 +228,9 @@
   ],
   "summary": {
     "total_datasets": 4,
-    "total_records": 60,
-    "valid_records": 43,
-    "invalid_records": 17,
-    "total_errors": 22
+    "total_records": 80,
+    "valid_records": 58,
+    "invalid_records": 22,
+    "total_errors": 27
   }
 }

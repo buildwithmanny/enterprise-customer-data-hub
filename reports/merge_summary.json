@@ -3,21 +3,21 @@
   "report_version": 1,
   "executive_summary": {
     "source_datasets_validated": 4,
-    "source_records_validated": 60,
-    "validation_failures": 22,
-    "duplicate_groups_found": 4,
-    "source_records_evaluated_for_matching": 45,
-    "matched_source_records": 33,
-    "unmatched_records": 8,
-    "ambiguous_matches": 4,
-    "canonical_customers_created": 13,
-    "manual_review_items": 36
+    "source_records_validated": 80,
+    "validation_failures": 27,
+    "duplicate_groups_found": 10,
+    "source_records_evaluated_for_matching": 59,
+    "matched_source_records": 37,
+    "unmatched_records": 11,
+    "ambiguous_matches": 11,
+    "canonical_customers_created": 16,
+    "manual_review_items": 54
   },
   "issue_counts": {
     "validation_issues": {
-      "Missing required value": 7,
+      "Missing required value": 10,
       "Invalid phone format; expected ###-###-####": 2,
-      "Invalid email format": 1,
+      "Invalid email format": 3,
       "Invalid date format; expected YYYY-MM-DD": 5,
       "Must be a non-negative integer": 1,
       "Must be a non-negative number": 3,
@@ -26,19 +26,20 @@
       "Invalid support priority": 1
     },
     "duplicate_groups_by_source": {
-      "crm": 2,
-      "sales": 1,
-      "support": 1
-    },
-    "unmatched_records_by_source": {
+      "crm": 5,
       "sales": 2,
-      "finance": 4,
-      "support": 2
-    },
-    "ambiguous_matches_by_source": {
-      "sales": 1,
       "finance": 1,
       "support": 2
+    },
+    "unmatched_records_by_source": {
+      "sales": 3,
+      "finance": 5,
+      "support": 3
+    },
+    "ambiguous_matches_by_source": {
+      "sales": 4,
+      "finance": 4,
+      "support": 3
     }
   },
   "duplicates_found": [
@@ -54,12 +55,42 @@
     },
     {
       "source": "crm",
+      "field": "customer_id",
+      "value": "c018",
+      "occurrences": 2,
+      "record_positions": [
+        16,
+        17
+      ]
+    },
+    {
+      "source": "crm",
+      "field": "customer_id",
+      "value": "c020",
+      "occurrences": 2,
+      "record_positions": [
+        19,
+        20
+      ]
+    },
+    {
+      "source": "crm",
       "field": "email",
       "value": "maria.garcia@email.com",
       "occurrences": 2,
       "record_positions": [
         10,
         11
+      ]
+    },
+    {
+      "source": "crm",
+      "field": "email",
+      "value": "olivia.parker@email.com",
+      "occurrences": 2,
+      "record_positions": [
+        19,
+        20
       ]
     },
     {
@@ -73,6 +104,26 @@
       ]
     },
     {
+      "source": "sales",
+      "field": "customer_number",
+      "value": "c020",
+      "occurrences": 2,
+      "record_positions": [
+        18,
+        19
+      ]
+    },
+    {
+      "source": "finance",
+      "field": "user_id",
+      "value": "c018",
+      "occurrences": 2,
+      "record_positions": [
+        16,
+        17
+      ]
+    },
+    {
       "source": "support",
       "field": "email",
       "value": "maria.garcia@email.com",
@@ -80,6 +131,16 @@
       "record_positions": [
         10,
         11
+      ]
+    },
+    {
+      "source": "support",
+      "field": "email",
+      "value": "linda.chen@email.com",
+      "occurrences": 2,
+      "record_positions": [
+        16,
+        17
       ]
     }
   ],
@@ -96,6 +157,13 @@
       "source_position": 15,
       "source_identifier": "c015",
       "match_method": "customer_id",
+      "crm_record_positions": []
+    },
+    {
+      "source": "sales",
+      "source_position": 20,
+      "source_identifier": "missing",
+      "match_method": null,
       "crm_record_positions": []
     },
     {
@@ -127,6 +195,13 @@
       "crm_record_positions": []
     },
     {
+      "source": "finance",
+      "source_position": 19,
+      "source_identifier": "missing",
+      "match_method": null,
+      "crm_record_positions": []
+    },
+    {
       "source": "support",
       "source_position": 14,
       "source_identifier": "unknown.customer@email.com",
@@ -137,6 +212,13 @@
       "source": "support",
       "source_position": 15,
       "source_identifier": "missing",
+      "match_method": null,
+      "crm_record_positions": []
+    },
+    {
+      "source": "support",
+      "source_position": 20,
+      "source_identifier": "no.crm.customer@email.com",
       "match_method": null,
       "crm_record_positions": []
     }
@@ -153,6 +235,36 @@
       ]
     },
     {
+      "source": "sales",
+      "source_position": 16,
+      "source_identifier": "c018",
+      "match_method": "customer_id",
+      "crm_record_positions": [
+        16,
+        17
+      ]
+    },
+    {
+      "source": "sales",
+      "source_position": 18,
+      "source_identifier": "c020",
+      "match_method": "customer_id",
+      "crm_record_positions": [
+        19,
+        20
+      ]
+    },
+    {
+      "source": "sales",
+      "source_position": 19,
+      "source_identifier": "c020",
+      "match_method": "customer_id",
+      "crm_record_positions": [
+        19,
+        20
+      ]
+    },
+    {
       "source": "finance",
       "source_position": 10,
       "source_identifier": "c010",
@@ -160,6 +272,36 @@
       "crm_record_positions": [
         10,
         11
+      ]
+    },
+    {
+      "source": "finance",
+      "source_position": 16,
+      "source_identifier": "c018",
+      "match_method": "customer_id",
+      "crm_record_positions": [
+        16,
+        17
+      ]
+    },
+    {
+      "source": "finance",
+      "source_position": 17,
+      "source_identifier": "c018",
+      "match_method": "customer_id",
+      "crm_record_positions": [
+        16,
+        17
+      ]
+    },
+    {
+      "source": "finance",
+      "source_position": 18,
+      "source_identifier": "c020",
+      "match_method": "customer_id",
+      "crm_record_positions": [
+        19,
+        20
       ]
     },
     {
@@ -180,6 +322,16 @@
       "crm_record_positions": [
         10,
         11
+      ]
+    },
+    {
+      "source": "support",
+      "source_position": 19,
+      "source_identifier": "olivia.parker@email.com",
+      "match_method": "email",
+      "crm_record_positions": [
+        19,
+        20
       ]
     }
   ],
@@ -241,6 +393,30 @@
       "value": ""
     },
     {
+      "dataset": "crm",
+      "row": 17,
+      "record_id": "C018",
+      "field": "email",
+      "issue": "Invalid email format",
+      "value": "linda.chenemail.com"
+    },
+    {
+      "dataset": "crm",
+      "row": 19,
+      "record_id": "C019",
+      "field": "email",
+      "issue": "Invalid email format",
+      "value": "marcus.reedemail.com"
+    },
+    {
+      "dataset": "crm",
+      "row": 22,
+      "record_id": "missing",
+      "field": "customer_id",
+      "issue": "Missing required value",
+      "value": ""
+    },
+    {
       "dataset": "sales",
       "row": 13,
       "record_id": "C013",
@@ -269,6 +445,14 @@
       "row": 16,
       "record_id": "C015",
       "field": "total_orders",
+      "issue": "Missing required value",
+      "value": ""
+    },
+    {
+      "dataset": "sales",
+      "row": 21,
+      "record_id": "missing",
+      "field": "customer_number",
       "issue": "Missing required value",
       "value": ""
     },
@@ -337,6 +521,14 @@
       "value": "not-a-date"
     },
     {
+      "dataset": "finance",
+      "row": 19,
+      "record_id": "missing",
+      "field": "user_id",
+      "issue": "Missing required value",
+      "value": null
+    },
+    {
       "dataset": "support",
       "row": 15,
       "record_id": "unknown.customer@email.com",
@@ -371,6 +563,22 @@
       "selected_address": "888 Garden Grove Boulevard, Garden Grove, CA"
     },
     {
+      "review_type": "crm_duplicate_resolution",
+      "customer_id": "c018",
+      "records_reviewed": 2,
+      "rule_applied": "Prefer newest CRM record and fill missing values from older CRM records",
+      "selected_last_updated": "2026-06-14",
+      "selected_address": "99 New Harbor Rd, Irvine, CA"
+    },
+    {
+      "review_type": "crm_duplicate_resolution",
+      "customer_id": "c020",
+      "records_reviewed": 2,
+      "rule_applied": "Prefer newest CRM record and fill missing values from older CRM records",
+      "selected_last_updated": "2026-06-16",
+      "selected_address": "700 New Coast Hwy, Laguna Beach, CA"
+    },
+    {
       "review_type": "missing_customer_id",
       "source_position": 12,
       "reason": "CRM record is missing customer_id",
@@ -382,6 +590,20 @@
         "address": "100 Valley Blvd, Pasadena, CA",
         "status": "active",
         "last_updated": "2026-06-10"
+      }
+    },
+    {
+      "review_type": "missing_customer_id",
+      "source_position": 21,
+      "reason": "CRM record is missing customer_id",
+      "record": {
+        "customer_id": "",
+        "name": "No Identifier",
+        "email": "no.identifier@email.com",
+        "phone": "949-555-0121",
+        "address": "800 Unknown Rd, Irvine, CA",
+        "status": "active",
+        "last_updated": "2026-06-16"
       }
     }
   ],
@@ -479,6 +701,45 @@
     },
     {
       "review_type": "validation_failure",
+      "source": "crm",
+      "record_reference": "C018",
+      "details": {
+        "dataset": "crm",
+        "row": 17,
+        "record_id": "C018",
+        "field": "email",
+        "issue": "Invalid email format",
+        "value": "linda.chenemail.com"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "crm",
+      "record_reference": "C019",
+      "details": {
+        "dataset": "crm",
+        "row": 19,
+        "record_id": "C019",
+        "field": "email",
+        "issue": "Invalid email format",
+        "value": "marcus.reedemail.com"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "crm",
+      "record_reference": "missing",
+      "details": {
+        "dataset": "crm",
+        "row": 22,
+        "record_id": "missing",
+        "field": "customer_id",
+        "issue": "Missing required value",
+        "value": ""
+      }
+    },
+    {
+      "review_type": "validation_failure",
       "source": "sales",
       "record_reference": "C013",
       "details": {
@@ -525,6 +786,19 @@
         "row": 16,
         "record_id": "C015",
         "field": "total_orders",
+        "issue": "Missing required value",
+        "value": ""
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "sales",
+      "record_reference": "missing",
+      "details": {
+        "dataset": "sales",
+        "row": 21,
+        "record_id": "missing",
+        "field": "customer_number",
         "issue": "Missing required value",
         "value": ""
       }
@@ -635,6 +909,19 @@
     },
     {
       "review_type": "validation_failure",
+      "source": "finance",
+      "record_reference": "missing",
+      "details": {
+        "dataset": "finance",
+        "row": 19,
+        "record_id": "missing",
+        "field": "user_id",
+        "issue": "Missing required value",
+        "value": null
+      }
+    },
+    {
+      "review_type": "validation_failure",
       "source": "support",
       "record_reference": "unknown.customer@email.com",
       "details": {
@@ -698,6 +985,18 @@
     },
     {
       "review_type": "unmatched_record",
+      "source": "sales",
+      "record_reference": "missing",
+      "details": {
+        "source": "sales",
+        "source_position": 20,
+        "source_identifier": "missing",
+        "match_method": null,
+        "crm_record_positions": []
+      }
+    },
+    {
+      "review_type": "unmatched_record",
       "source": "finance",
       "record_reference": "c015",
       "details": {
@@ -746,6 +1045,18 @@
     },
     {
       "review_type": "unmatched_record",
+      "source": "finance",
+      "record_reference": "missing",
+      "details": {
+        "source": "finance",
+        "source_position": 19,
+        "source_identifier": "missing",
+        "match_method": null,
+        "crm_record_positions": []
+      }
+    },
+    {
+      "review_type": "unmatched_record",
       "source": "support",
       "record_reference": "unknown.customer@email.com",
       "details": {
@@ -769,6 +1080,18 @@
       }
     },
     {
+      "review_type": "unmatched_record",
+      "source": "support",
+      "record_reference": "no.crm.customer@email.com",
+      "details": {
+        "source": "support",
+        "source_position": 20,
+        "source_identifier": "no.crm.customer@email.com",
+        "match_method": null,
+        "crm_record_positions": []
+      }
+    },
+    {
       "review_type": "ambiguous_match",
       "source": "sales",
       "record_reference": "c010",
@@ -785,6 +1108,51 @@
     },
     {
       "review_type": "ambiguous_match",
+      "source": "sales",
+      "record_reference": "c018",
+      "details": {
+        "source": "sales",
+        "source_position": 16,
+        "source_identifier": "c018",
+        "match_method": "customer_id",
+        "crm_record_positions": [
+          16,
+          17
+        ]
+      }
+    },
+    {
+      "review_type": "ambiguous_match",
+      "source": "sales",
+      "record_reference": "c020",
+      "details": {
+        "source": "sales",
+        "source_position": 18,
+        "source_identifier": "c020",
+        "match_method": "customer_id",
+        "crm_record_positions": [
+          19,
+          20
+        ]
+      }
+    },
+    {
+      "review_type": "ambiguous_match",
+      "source": "sales",
+      "record_reference": "c020",
+      "details": {
+        "source": "sales",
+        "source_position": 19,
+        "source_identifier": "c020",
+        "match_method": "customer_id",
+        "crm_record_positions": [
+          19,
+          20
+        ]
+      }
+    },
+    {
+      "review_type": "ambiguous_match",
       "source": "finance",
       "record_reference": "c010",
       "details": {
@@ -795,6 +1163,51 @@
         "crm_record_positions": [
           10,
           11
+        ]
+      }
+    },
+    {
+      "review_type": "ambiguous_match",
+      "source": "finance",
+      "record_reference": "c018",
+      "details": {
+        "source": "finance",
+        "source_position": 16,
+        "source_identifier": "c018",
+        "match_method": "customer_id",
+        "crm_record_positions": [
+          16,
+          17
+        ]
+      }
+    },
+    {
+      "review_type": "ambiguous_match",
+      "source": "finance",
+      "record_reference": "c018",
+      "details": {
+        "source": "finance",
+        "source_position": 17,
+        "source_identifier": "c018",
+        "match_method": "customer_id",
+        "crm_record_positions": [
+          16,
+          17
+        ]
+      }
+    },
+    {
+      "review_type": "ambiguous_match",
+      "source": "finance",
+      "record_reference": "c020",
+      "details": {
+        "source": "finance",
+        "source_position": 18,
+        "source_identifier": "c020",
+        "match_method": "customer_id",
+        "crm_record_positions": [
+          19,
+          20
         ]
       }
     },
@@ -829,6 +1242,21 @@
       }
     },
     {
+      "review_type": "ambiguous_match",
+      "source": "support",
+      "record_reference": "olivia.parker@email.com",
+      "details": {
+        "source": "support",
+        "source_position": 19,
+        "source_identifier": "olivia.parker@email.com",
+        "match_method": "email",
+        "crm_record_positions": [
+          19,
+          20
+        ]
+      }
+    },
+    {
       "review_type": "crm_duplicate_resolution",
       "source": "crm",
       "record_reference": "c010",
@@ -839,6 +1267,32 @@
         "rule_applied": "Prefer newest CRM record and fill missing values from older CRM records",
         "selected_last_updated": "2026-06-09",
         "selected_address": "888 Garden Grove Boulevard, Garden Grove, CA"
+      }
+    },
+    {
+      "review_type": "crm_duplicate_resolution",
+      "source": "crm",
+      "record_reference": "c018",
+      "details": {
+        "review_type": "crm_duplicate_resolution",
+        "customer_id": "c018",
+        "records_reviewed": 2,
+        "rule_applied": "Prefer newest CRM record and fill missing values from older CRM records",
+        "selected_last_updated": "2026-06-14",
+        "selected_address": "99 New Harbor Rd, Irvine, CA"
+      }
+    },
+    {
+      "review_type": "crm_duplicate_resolution",
+      "source": "crm",
+      "record_reference": "c020",
+      "details": {
+        "review_type": "crm_duplicate_resolution",
+        "customer_id": "c020",
+        "records_reviewed": 2,
+        "rule_applied": "Prefer newest CRM record and fill missing values from older CRM records",
+        "selected_last_updated": "2026-06-16",
+        "selected_address": "700 New Coast Hwy, Laguna Beach, CA"
       }
     },
     {
@@ -859,34 +1313,53 @@
           "last_updated": "2026-06-10"
         }
       }
+    },
+    {
+      "review_type": "missing_customer_id",
+      "source": "crm",
+      "record_reference": 21,
+      "details": {
+        "review_type": "missing_customer_id",
+        "source_position": 21,
+        "reason": "CRM record is missing customer_id",
+        "record": {
+          "customer_id": "",
+          "name": "No Identifier",
+          "email": "no.identifier@email.com",
+          "phone": "949-555-0121",
+          "address": "800 Unknown Rd, Irvine, CA",
+          "status": "active",
+          "last_updated": "2026-06-16"
+        }
+      }
     }
   ],
   "source_matching_summary": {
     "sales": {
-      "total_records": 15,
-      "matched": 12,
-      "unmatched": 2,
-      "ambiguous": 1
+      "total_records": 20,
+      "matched": 13,
+      "unmatched": 3,
+      "ambiguous": 4
     },
     "finance": {
-      "total_records": 15,
+      "total_records": 19,
       "matched": 10,
-      "unmatched": 4,
-      "ambiguous": 1
+      "unmatched": 5,
+      "ambiguous": 4
     },
     "support": {
-      "total_records": 15,
-      "matched": 11,
-      "unmatched": 2,
-      "ambiguous": 2
+      "total_records": 20,
+      "matched": 14,
+      "unmatched": 3,
+      "ambiguous": 3
     }
   },
   "unified_customer_summary": {
-    "raw_crm_records": 15,
-    "unified_customers": 13,
-    "customers_with_sales": 12,
-    "customers_with_finance": 11,
-    "customers_with_support": 11
+    "raw_crm_records": 21,
+    "unified_customers": 16,
+    "customers_with_sales": 15,
+    "customers_with_finance": 13,
+    "customers_with_support": 14
   },
   "business_rules": [
     {
@@ -1209,6 +1682,72 @@
         "ticket_status": null,
         "customer_sentiment": null,
         "support_priority": null,
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C018",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": "finance",
+        "credit_score": "finance",
+        "debt": "finance",
+        "risk_status": "finance",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C019",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": null,
+        "credit_score": null,
+        "debt": null,
+        "risk_status": null,
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C020",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": "finance",
+        "credit_score": "finance",
+        "debt": "finance",
+        "risk_status": "finance",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
         "customer_id": "crm"
       }
     }

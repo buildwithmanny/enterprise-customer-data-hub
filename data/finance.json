@@ -118,5 +118,37 @@
     "debt": 23000,
     "risk_status": "critical",
     "last_updated": "not-a-date"
+  },
+  {
+    "user_id": "C018",
+    "credit_score": 620,
+    "monthly_income": 4800,
+    "debt": 29000,
+    "risk_status": "high",
+    "last_updated": "2021-01-10"
+  },
+  {
+    "user_id": "C018",
+    "credit_score": 735,
+    "monthly_income": 7600,
+    "debt": 12000,
+    "risk_status": "low",
+    "last_updated": "2026-06-14"
+  },
+  {
+    "user_id": "C020",
+    "credit_score": 710,
+    "monthly_income": 6800,
+    "debt": 17000,
+    "risk_status": "low",
+    "last_updated": "2026-06-15"
+  },
+  {
+    "user_id": null,
+    "credit_score": 690,
+    "monthly_income": 5200,
+    "debt": 20000,
+    "risk_status": "medium",
+    "last_updated": "2026-06-15"
   }
 ]
