@@ -5,6 +5,9 @@ from typing import Any
 
 from loader import load_csv, load_json
 from merger import analyze_customer_matches
+from reporting import (
+    build_operational_merge_summary
+)
 from validator import (
     validate_crm,
     validate_finance,
@@ -221,14 +224,16 @@ def build_validation_report(
 
 
 def display_duplicate_summary(
-    match_report: dict[str, Any]
+    customer_match_report: dict[str, Any]
 ) -> None:
     """
     Print source duplicate analysis.
     """
 
     duplicate_analysis = (
-        match_report["duplicate_analysis"]
+        customer_match_report[
+            "duplicate_analysis"
+        ]
     )
 
     print(f"\n{'=' * 60}")
@@ -264,14 +269,16 @@ def display_duplicate_summary(
 
 
 def display_matching_summary(
-    match_report: dict[str, Any]
+    customer_match_report: dict[str, Any]
 ) -> None:
     """
     Print cross-source match results.
     """
 
     matching_analysis = (
-        match_report["matching_analysis"]
+        customer_match_report[
+            "matching_analysis"
+        ]
     )
 
     print(f"\n{'=' * 60}")
@@ -304,20 +311,20 @@ def display_matching_summary(
 
 
 def display_unified_profile_summary(
-    match_report: dict[str, Any]
+    customer_match_report: dict[str, Any]
 ) -> None:
     """
-    Print the Day 5 unified-profile summary.
+    Print the unified-profile summary.
     """
 
-    result = match_report[
+    result = customer_match_report[
         "unified_profile_result"
     ]
 
     summary = result["summary"]
 
     print(f"\n{'=' * 60}")
-    print("DAY 5 UNIFIED CUSTOMER PROFILES")
+    print("UNIFIED CUSTOMER PROFILES")
     print(f"{'=' * 60}")
 
     print(
@@ -345,17 +352,67 @@ def display_unified_profile_summary(
         f"{summary['customers_with_support']}"
     )
 
-    customers = result["customers"]
 
-    if customers:
-        print("\nFirst unified customer:")
-        print(customers[0])
+def display_operational_report_summary(
+    merge_summary: dict[str, Any]
+) -> None:
+    """
+    Print the high-level Day 9 error-reporting summary.
+    """
+
+    summary = merge_summary[
+        "executive_summary"
+    ]
+
+    print(f"\n{'=' * 60}")
+    print("DAY 9 OPERATIONAL MERGE SUMMARY")
+    print(f"{'=' * 60}")
+
+    print(
+        f"Source records validated:   "
+        f"{summary['source_records_validated']}"
+    )
+
+    print(
+        f"Validation failures:        "
+        f"{summary['validation_failures']}"
+    )
+
+    print(
+        f"Duplicate groups found:     "
+        f"{summary['duplicate_groups_found']}"
+    )
+
+    print(
+        f"Matched source records:     "
+        f"{summary['matched_source_records']}"
+    )
+
+    print(
+        f"Unmatched records:          "
+        f"{summary['unmatched_records']}"
+    )
+
+    print(
+        f"Ambiguous matches:          "
+        f"{summary['ambiguous_matches']}"
+    )
+
+    print(
+        f"Canonical customers:        "
+        f"{summary['canonical_customers_created']}"
+    )
+
+    print(
+        f"Manual review items:        "
+        f"{summary['manual_review_items']}"
+    )
 
 
 def main() -> None:
     """
-    Load, validate, match, resolve, and export
-    unified customer profiles.
+    Load, validate, match, resolve, export, and
+    produce operational error reports.
     """
 
     try:
@@ -458,12 +515,6 @@ def main() -> None:
             customer_match_report
         )
 
-        save_json_report(
-            REPORTS_DIRECTORY
-            / "merge_summary.json",
-            customer_match_report
-        )
-
         unified_customers = (
             customer_match_report[
                 "unified_profile_result"
@@ -481,10 +532,27 @@ def main() -> None:
             f"{merged_output_path}"
         )
 
+        operational_merge_summary = (
+            build_operational_merge_summary(
+                validation_reports,
+                customer_match_report
+            )
+        )
+
+        save_json_report(
+            REPORTS_DIRECTORY
+            / "merge_summary.json",
+            operational_merge_summary
+        )
+
+        display_operational_report_summary(
+            operational_merge_summary
+        )
+
         print(f"\n{'=' * 60}")
         print(
-            "Day 5 unified customer profiles "
-            "completed successfully."
+            "Day 9 error reporting completed "
+            "successfully."
         )
         print(f"{'=' * 60}")
 

@@ -1,521 +1,892 @@
 {
-  "duplicate_analysis": {
-    "total_duplicate_groups": 4,
-    "by_source": {
-      "crm": [
-        {
-          "field": "customer_id",
-          "value": "c010",
-          "record_positions": [
-            10,
-            11
-          ],
-          "occurrences": 2
-        },
-        {
-          "field": "email",
-          "value": "maria.garcia@email.com",
-          "record_positions": [
-            10,
-            11
-          ],
-          "occurrences": 2
-        }
-      ],
-      "sales": [
-        {
-          "field": "customer_number",
-          "value": "c005",
-          "record_positions": [
-            5,
-            14
-          ],
-          "occurrences": 2
-        }
-      ],
-      "finance": [],
-      "support": [
-        {
-          "field": "email",
-          "value": "maria.garcia@email.com",
-          "record_positions": [
-            10,
-            11
-          ],
-          "occurrences": 2
-        }
-      ]
+  "report_name": "Enterprise Customer Data Hub Merge Summary",
+  "report_version": 1,
+  "executive_summary": {
+    "source_datasets_validated": 4,
+    "source_records_validated": 60,
+    "validation_failures": 22,
+    "duplicate_groups_found": 4,
+    "source_records_evaluated_for_matching": 45,
+    "matched_source_records": 33,
+    "unmatched_records": 8,
+    "ambiguous_matches": 4,
+    "canonical_customers_created": 13,
+    "manual_review_items": 36
+  },
+  "issue_counts": {
+    "validation_issues": {
+      "Missing required value": 7,
+      "Invalid phone format; expected ###-###-####": 2,
+      "Invalid email format": 1,
+      "Invalid date format; expected YYYY-MM-DD": 5,
+      "Must be a non-negative integer": 1,
+      "Must be a non-negative number": 3,
+      "Must be an integer between 300 and 850": 1,
+      "Invalid risk status": 1,
+      "Invalid support priority": 1
+    },
+    "duplicate_groups_by_source": {
+      "crm": 2,
+      "sales": 1,
+      "support": 1
+    },
+    "unmatched_records_by_source": {
+      "sales": 2,
+      "finance": 4,
+      "support": 2
+    },
+    "ambiguous_matches_by_source": {
+      "sales": 1,
+      "finance": 1,
+      "support": 2
     }
   },
-  "matching_analysis": {
-    "sales": {
-      "summary": {
-        "total_records": 15,
-        "matched": 12,
-        "unmatched": 2,
-        "ambiguous": 1
-      },
-      "records": [
-        {
-          "source": "sales",
-          "source_position": 1,
-          "source_identifier": "c001",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            1
-          ]
-        },
-        {
-          "source": "sales",
-          "source_position": 2,
-          "source_identifier": "c002",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            2
-          ]
-        },
-        {
-          "source": "sales",
-          "source_position": 3,
-          "source_identifier": "c003",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            3
-          ]
-        },
-        {
-          "source": "sales",
-          "source_position": 4,
-          "source_identifier": "c004",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            4
-          ]
-        },
-        {
-          "source": "sales",
-          "source_position": 5,
-          "source_identifier": "c005",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            5
-          ]
-        },
-        {
-          "source": "sales",
-          "source_position": 6,
-          "source_identifier": "c006",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            6
-          ]
-        },
-        {
-          "source": "sales",
-          "source_position": 7,
-          "source_identifier": "c007",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            7
-          ]
-        },
-        {
-          "source": "sales",
-          "source_position": 8,
-          "source_identifier": "c008",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            8
-          ]
-        },
-        {
-          "source": "sales",
-          "source_position": 9,
-          "source_identifier": "c009",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            9
-          ]
-        },
-        {
-          "source": "sales",
-          "source_position": 10,
-          "source_identifier": "c010",
-          "match_status": "ambiguous",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            10,
-            11
-          ]
-        },
-        {
-          "source": "sales",
-          "source_position": 11,
-          "source_identifier": "c011",
-          "match_status": "unmatched",
-          "match_method": "customer_id",
-          "crm_record_positions": []
-        },
-        {
-          "source": "sales",
-          "source_position": 12,
-          "source_identifier": "c013",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            14
-          ]
-        },
-        {
-          "source": "sales",
-          "source_position": 13,
-          "source_identifier": "c014",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            15
-          ]
-        },
-        {
-          "source": "sales",
-          "source_position": 14,
-          "source_identifier": "c005",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            5
-          ]
-        },
-        {
-          "source": "sales",
-          "source_position": 15,
-          "source_identifier": "c015",
-          "match_status": "unmatched",
-          "match_method": "customer_id",
-          "crm_record_positions": []
-        }
+  "duplicates_found": [
+    {
+      "source": "crm",
+      "field": "customer_id",
+      "value": "c010",
+      "occurrences": 2,
+      "record_positions": [
+        10,
+        11
       ]
     },
-    "finance": {
-      "summary": {
-        "total_records": 15,
-        "matched": 10,
-        "unmatched": 4,
-        "ambiguous": 1
-      },
-      "records": [
-        {
-          "source": "finance",
-          "source_position": 1,
-          "source_identifier": "c001",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            1
-          ]
-        },
-        {
-          "source": "finance",
-          "source_position": 2,
-          "source_identifier": "c002",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            2
-          ]
-        },
-        {
-          "source": "finance",
-          "source_position": 3,
-          "source_identifier": "c003",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            3
-          ]
-        },
-        {
-          "source": "finance",
-          "source_position": 4,
-          "source_identifier": "c004",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            4
-          ]
-        },
-        {
-          "source": "finance",
-          "source_position": 5,
-          "source_identifier": "c005",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            5
-          ]
-        },
-        {
-          "source": "finance",
-          "source_position": 6,
-          "source_identifier": "c006",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            6
-          ]
-        },
-        {
-          "source": "finance",
-          "source_position": 7,
-          "source_identifier": "c007",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            7
-          ]
-        },
-        {
-          "source": "finance",
-          "source_position": 8,
-          "source_identifier": "c008",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            8
-          ]
-        },
-        {
-          "source": "finance",
-          "source_position": 9,
-          "source_identifier": "c009",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            9
-          ]
-        },
-        {
-          "source": "finance",
-          "source_position": 10,
-          "source_identifier": "c010",
-          "match_status": "ambiguous",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            10,
-            11
-          ]
-        },
-        {
-          "source": "finance",
-          "source_position": 11,
-          "source_identifier": "c012",
-          "match_status": "matched",
-          "match_method": "customer_id",
-          "crm_record_positions": [
-            13
-          ]
-        },
-        {
-          "source": "finance",
-          "source_position": 12,
-          "source_identifier": "c015",
-          "match_status": "unmatched",
-          "match_method": "customer_id",
-          "crm_record_positions": []
-        },
-        {
-          "source": "finance",
-          "source_position": 13,
-          "source_identifier": "missing",
-          "match_status": "unmatched",
-          "match_method": null,
-          "crm_record_positions": []
-        },
-        {
-          "source": "finance",
-          "source_position": 14,
-          "source_identifier": "c016",
-          "match_status": "unmatched",
-          "match_method": "customer_id",
-          "crm_record_positions": []
-        },
-        {
-          "source": "finance",
-          "source_position": 15,
-          "source_identifier": "c017",
-          "match_status": "unmatched",
-          "match_method": "customer_id",
-          "crm_record_positions": []
-        }
+    {
+      "source": "crm",
+      "field": "email",
+      "value": "maria.garcia@email.com",
+      "occurrences": 2,
+      "record_positions": [
+        10,
+        11
       ]
     },
-    "support": {
-      "summary": {
-        "total_records": 15,
-        "matched": 11,
-        "unmatched": 2,
-        "ambiguous": 2
-      },
-      "records": [
-        {
-          "source": "support",
-          "source_position": 1,
-          "source_identifier": "john.smith@email.com",
-          "match_status": "matched",
-          "match_method": "email",
-          "crm_record_positions": [
-            1
-          ]
-        },
-        {
-          "source": "support",
-          "source_position": 2,
-          "source_identifier": "sarah.johnson@email.com",
-          "match_status": "matched",
-          "match_method": "email",
-          "crm_record_positions": [
-            2
-          ]
-        },
-        {
-          "source": "support",
-          "source_position": 3,
-          "source_identifier": "michael.brown@email.com",
-          "match_status": "matched",
-          "match_method": "email",
-          "crm_record_positions": [
-            3
-          ]
-        },
-        {
-          "source": "support",
-          "source_position": 4,
-          "source_identifier": "emily.davis@email.com",
-          "match_status": "matched",
-          "match_method": "email",
-          "crm_record_positions": [
-            4
-          ]
-        },
-        {
-          "source": "support",
-          "source_position": 5,
-          "source_identifier": "david.wilson@email.com",
-          "match_status": "matched",
-          "match_method": "email",
-          "crm_record_positions": [
-            5
-          ]
-        },
-        {
-          "source": "support",
-          "source_position": 6,
-          "source_identifier": "lisa.martinez@email.com",
-          "match_status": "matched",
-          "match_method": "email",
-          "crm_record_positions": [
-            6
-          ]
-        },
-        {
-          "source": "support",
-          "source_position": 7,
-          "source_identifier": "robert.taylor@email.com",
-          "match_status": "matched",
-          "match_method": "email",
-          "crm_record_positions": [
-            7
-          ]
-        },
-        {
-          "source": "support",
-          "source_position": 8,
-          "source_identifier": "jennifer.anderson@email.com",
-          "match_status": "matched",
-          "match_method": "email",
-          "crm_record_positions": [
-            8
-          ]
-        },
-        {
-          "source": "support",
-          "source_position": 9,
-          "source_identifier": "james.thomas@email.com",
-          "match_status": "matched",
-          "match_method": "email",
-          "crm_record_positions": [
-            9
-          ]
-        },
-        {
-          "source": "support",
-          "source_position": 10,
-          "source_identifier": "maria.garcia@email.com",
-          "match_status": "ambiguous",
-          "match_method": "email",
-          "crm_record_positions": [
-            10,
-            11
-          ]
-        },
-        {
-          "source": "support",
-          "source_position": 11,
-          "source_identifier": "maria.garcia@email.com",
-          "match_status": "ambiguous",
-          "match_method": "email",
-          "crm_record_positions": [
-            10,
-            11
-          ]
-        },
-        {
-          "source": "support",
-          "source_position": 12,
-          "source_identifier": "kevin.lee@email.com",
-          "match_status": "matched",
-          "match_method": "email",
-          "crm_record_positions": [
-            12
-          ]
-        },
-        {
-          "source": "support",
-          "source_position": 13,
-          "source_identifier": "amanda.white@email.com",
-          "match_status": "matched",
-          "match_method": "name_from_email",
-          "crm_record_positions": [
-            13
-          ]
-        },
-        {
-          "source": "support",
-          "source_position": 14,
-          "source_identifier": "unknown.customer@email.com",
-          "match_status": "unmatched",
-          "match_method": null,
-          "crm_record_positions": []
-        },
-        {
-          "source": "support",
-          "source_position": 15,
-          "source_identifier": "missing",
-          "match_status": "unmatched",
-          "match_method": null,
-          "crm_record_positions": []
-        }
+    {
+      "source": "sales",
+      "field": "customer_number",
+      "value": "c005",
+      "occurrences": 2,
+      "record_positions": [
+        5,
+        14
+      ]
+    },
+    {
+      "source": "support",
+      "field": "email",
+      "value": "maria.garcia@email.com",
+      "occurrences": 2,
+      "record_positions": [
+        10,
+        11
       ]
     }
+  ],
+  "unmatched_records": [
+    {
+      "source": "sales",
+      "source_position": 11,
+      "source_identifier": "c011",
+      "match_method": "customer_id",
+      "crm_record_positions": []
+    },
+    {
+      "source": "sales",
+      "source_position": 15,
+      "source_identifier": "c015",
+      "match_method": "customer_id",
+      "crm_record_positions": []
+    },
+    {
+      "source": "finance",
+      "source_position": 12,
+      "source_identifier": "c015",
+      "match_method": "customer_id",
+      "crm_record_positions": []
+    },
+    {
+      "source": "finance",
+      "source_position": 13,
+      "source_identifier": "missing",
+      "match_method": null,
+      "crm_record_positions": []
+    },
+    {
+      "source": "finance",
+      "source_position": 14,
+      "source_identifier": "c016",
+      "match_method": "customer_id",
+      "crm_record_positions": []
+    },
+    {
+      "source": "finance",
+      "source_position": 15,
+      "source_identifier": "c017",
+      "match_method": "customer_id",
+      "crm_record_positions": []
+    },
+    {
+      "source": "support",
+      "source_position": 14,
+      "source_identifier": "unknown.customer@email.com",
+      "match_method": null,
+      "crm_record_positions": []
+    },
+    {
+      "source": "support",
+      "source_position": 15,
+      "source_identifier": "missing",
+      "match_method": null,
+      "crm_record_positions": []
+    }
+  ],
+  "ambiguous_matches": [
+    {
+      "source": "sales",
+      "source_position": 10,
+      "source_identifier": "c010",
+      "match_method": "customer_id",
+      "crm_record_positions": [
+        10,
+        11
+      ]
+    },
+    {
+      "source": "finance",
+      "source_position": 10,
+      "source_identifier": "c010",
+      "match_method": "customer_id",
+      "crm_record_positions": [
+        10,
+        11
+      ]
+    },
+    {
+      "source": "support",
+      "source_position": 10,
+      "source_identifier": "maria.garcia@email.com",
+      "match_method": "email",
+      "crm_record_positions": [
+        10,
+        11
+      ]
+    },
+    {
+      "source": "support",
+      "source_position": 11,
+      "source_identifier": "maria.garcia@email.com",
+      "match_method": "email",
+      "crm_record_positions": [
+        10,
+        11
+      ]
+    }
+  ],
+  "validation_failures": [
+    {
+      "dataset": "crm",
+      "row": 9,
+      "record_id": "C008",
+      "field": "phone",
+      "issue": "Missing required value",
+      "value": ""
+    },
+    {
+      "dataset": "crm",
+      "row": 10,
+      "record_id": "C009",
+      "field": "phone",
+      "issue": "Invalid phone format; expected ###-###-####",
+      "value": "9495550109"
+    },
+    {
+      "dataset": "crm",
+      "row": 13,
+      "record_id": "missing",
+      "field": "customer_id",
+      "issue": "Missing required value",
+      "value": ""
+    },
+    {
+      "dataset": "crm",
+      "row": 14,
+      "record_id": "C012",
+      "field": "email",
+      "issue": "Invalid email format",
+      "value": "amanda.whiteemail.com"
+    },
+    {
+      "dataset": "crm",
+      "row": 14,
+      "record_id": "C012",
+      "field": "last_updated",
+      "issue": "Invalid date format; expected YYYY-MM-DD",
+      "value": "06/11/2026"
+    },
+    {
+      "dataset": "crm",
+      "row": 15,
+      "record_id": "C013",
+      "field": "phone",
+      "issue": "Invalid phone format; expected ###-###-####",
+      "value": "555-INVALID"
+    },
+    {
+      "dataset": "crm",
+      "row": 16,
+      "record_id": "C014",
+      "field": "name",
+      "issue": "Missing required value",
+      "value": ""
+    },
+    {
+      "dataset": "sales",
+      "row": 13,
+      "record_id": "C013",
+      "field": "last_purchase",
+      "issue": "Invalid date format; expected YYYY-MM-DD",
+      "value": "06/08/2026"
+    },
+    {
+      "dataset": "sales",
+      "row": 14,
+      "record_id": "C014",
+      "field": "total_orders",
+      "issue": "Must be a non-negative integer",
+      "value": "-2"
+    },
+    {
+      "dataset": "sales",
+      "row": 14,
+      "record_id": "C014",
+      "field": "lifetime_value",
+      "issue": "Must be a non-negative number",
+      "value": "-150.00"
+    },
+    {
+      "dataset": "sales",
+      "row": 16,
+      "record_id": "C015",
+      "field": "total_orders",
+      "issue": "Missing required value",
+      "value": ""
+    },
+    {
+      "dataset": "finance",
+      "row": 6,
+      "record_id": "C006",
+      "field": "credit_score",
+      "issue": "Missing required value",
+      "value": null
+    },
+    {
+      "dataset": "finance",
+      "row": 11,
+      "record_id": "C012",
+      "field": "monthly_income",
+      "issue": "Must be a non-negative number",
+      "value": "6500"
+    },
+    {
+      "dataset": "finance",
+      "row": 11,
+      "record_id": "C012",
+      "field": "last_updated",
+      "issue": "Invalid date format; expected YYYY-MM-DD",
+      "value": "06/09/2026"
+    },
+    {
+      "dataset": "finance",
+      "row": 12,
+      "record_id": "C015",
+      "field": "debt",
+      "issue": "Must be a non-negative number",
+      "value": -500
+    },
+    {
+      "dataset": "finance",
+      "row": 13,
+      "record_id": "missing",
+      "field": "user_id",
+      "issue": "Missing required value",
+      "value": ""
+    },
+    {
+      "dataset": "finance",
+      "row": 14,
+      "record_id": "C016",
+      "field": "credit_score",
+      "issue": "Must be an integer between 300 and 850",
+      "value": 910
+    },
+    {
+      "dataset": "finance",
+      "row": 15,
+      "record_id": "C017",
+      "field": "risk_status",
+      "issue": "Invalid risk status",
+      "value": "critical"
+    },
+    {
+      "dataset": "finance",
+      "row": 15,
+      "record_id": "C017",
+      "field": "last_updated",
+      "issue": "Invalid date format; expected YYYY-MM-DD",
+      "value": "not-a-date"
+    },
+    {
+      "dataset": "support",
+      "row": 15,
+      "record_id": "unknown.customer@email.com",
+      "field": "support_priority",
+      "issue": "Invalid support priority",
+      "value": "urgent"
+    },
+    {
+      "dataset": "support",
+      "row": 16,
+      "record_id": "T1015",
+      "field": "email",
+      "issue": "Missing required value",
+      "value": ""
+    },
+    {
+      "dataset": "support",
+      "row": 16,
+      "record_id": "T1015",
+      "field": "last_updated",
+      "issue": "Invalid date format; expected YYYY-MM-DD",
+      "value": "06/12/2026"
+    }
+  ],
+  "crm_resolution_decisions": [
+    {
+      "review_type": "crm_duplicate_resolution",
+      "customer_id": "c010",
+      "records_reviewed": 2,
+      "rule_applied": "Prefer newest CRM record and fill missing values from older CRM records",
+      "selected_last_updated": "2026-06-09",
+      "selected_address": "888 Garden Grove Boulevard, Garden Grove, CA"
+    },
+    {
+      "review_type": "missing_customer_id",
+      "source_position": 12,
+      "reason": "CRM record is missing customer_id",
+      "record": {
+        "customer_id": "",
+        "name": "Kevin Lee",
+        "email": "kevin.lee@email.com",
+        "phone": "626-555-0111",
+        "address": "100 Valley Blvd, Pasadena, CA",
+        "status": "active",
+        "last_updated": "2026-06-10"
+      }
+    }
+  ],
+  "manual_review_queue": [
+    {
+      "review_type": "validation_failure",
+      "source": "crm",
+      "record_reference": "C008",
+      "details": {
+        "dataset": "crm",
+        "row": 9,
+        "record_id": "C008",
+        "field": "phone",
+        "issue": "Missing required value",
+        "value": ""
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "crm",
+      "record_reference": "C009",
+      "details": {
+        "dataset": "crm",
+        "row": 10,
+        "record_id": "C009",
+        "field": "phone",
+        "issue": "Invalid phone format; expected ###-###-####",
+        "value": "9495550109"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "crm",
+      "record_reference": "missing",
+      "details": {
+        "dataset": "crm",
+        "row": 13,
+        "record_id": "missing",
+        "field": "customer_id",
+        "issue": "Missing required value",
+        "value": ""
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "crm",
+      "record_reference": "C012",
+      "details": {
+        "dataset": "crm",
+        "row": 14,
+        "record_id": "C012",
+        "field": "email",
+        "issue": "Invalid email format",
+        "value": "amanda.whiteemail.com"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "crm",
+      "record_reference": "C012",
+      "details": {
+        "dataset": "crm",
+        "row": 14,
+        "record_id": "C012",
+        "field": "last_updated",
+        "issue": "Invalid date format; expected YYYY-MM-DD",
+        "value": "06/11/2026"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "crm",
+      "record_reference": "C013",
+      "details": {
+        "dataset": "crm",
+        "row": 15,
+        "record_id": "C013",
+        "field": "phone",
+        "issue": "Invalid phone format; expected ###-###-####",
+        "value": "555-INVALID"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "crm",
+      "record_reference": "C014",
+      "details": {
+        "dataset": "crm",
+        "row": 16,
+        "record_id": "C014",
+        "field": "name",
+        "issue": "Missing required value",
+        "value": ""
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "sales",
+      "record_reference": "C013",
+      "details": {
+        "dataset": "sales",
+        "row": 13,
+        "record_id": "C013",
+        "field": "last_purchase",
+        "issue": "Invalid date format; expected YYYY-MM-DD",
+        "value": "06/08/2026"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "sales",
+      "record_reference": "C014",
+      "details": {
+        "dataset": "sales",
+        "row": 14,
+        "record_id": "C014",
+        "field": "total_orders",
+        "issue": "Must be a non-negative integer",
+        "value": "-2"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "sales",
+      "record_reference": "C014",
+      "details": {
+        "dataset": "sales",
+        "row": 14,
+        "record_id": "C014",
+        "field": "lifetime_value",
+        "issue": "Must be a non-negative number",
+        "value": "-150.00"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "sales",
+      "record_reference": "C015",
+      "details": {
+        "dataset": "sales",
+        "row": 16,
+        "record_id": "C015",
+        "field": "total_orders",
+        "issue": "Missing required value",
+        "value": ""
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "finance",
+      "record_reference": "C006",
+      "details": {
+        "dataset": "finance",
+        "row": 6,
+        "record_id": "C006",
+        "field": "credit_score",
+        "issue": "Missing required value",
+        "value": null
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "finance",
+      "record_reference": "C012",
+      "details": {
+        "dataset": "finance",
+        "row": 11,
+        "record_id": "C012",
+        "field": "monthly_income",
+        "issue": "Must be a non-negative number",
+        "value": "6500"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "finance",
+      "record_reference": "C012",
+      "details": {
+        "dataset": "finance",
+        "row": 11,
+        "record_id": "C012",
+        "field": "last_updated",
+        "issue": "Invalid date format; expected YYYY-MM-DD",
+        "value": "06/09/2026"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "finance",
+      "record_reference": "C015",
+      "details": {
+        "dataset": "finance",
+        "row": 12,
+        "record_id": "C015",
+        "field": "debt",
+        "issue": "Must be a non-negative number",
+        "value": -500
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "finance",
+      "record_reference": "missing",
+      "details": {
+        "dataset": "finance",
+        "row": 13,
+        "record_id": "missing",
+        "field": "user_id",
+        "issue": "Missing required value",
+        "value": ""
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "finance",
+      "record_reference": "C016",
+      "details": {
+        "dataset": "finance",
+        "row": 14,
+        "record_id": "C016",
+        "field": "credit_score",
+        "issue": "Must be an integer between 300 and 850",
+        "value": 910
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "finance",
+      "record_reference": "C017",
+      "details": {
+        "dataset": "finance",
+        "row": 15,
+        "record_id": "C017",
+        "field": "risk_status",
+        "issue": "Invalid risk status",
+        "value": "critical"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "finance",
+      "record_reference": "C017",
+      "details": {
+        "dataset": "finance",
+        "row": 15,
+        "record_id": "C017",
+        "field": "last_updated",
+        "issue": "Invalid date format; expected YYYY-MM-DD",
+        "value": "not-a-date"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "support",
+      "record_reference": "unknown.customer@email.com",
+      "details": {
+        "dataset": "support",
+        "row": 15,
+        "record_id": "unknown.customer@email.com",
+        "field": "support_priority",
+        "issue": "Invalid support priority",
+        "value": "urgent"
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "support",
+      "record_reference": "T1015",
+      "details": {
+        "dataset": "support",
+        "row": 16,
+        "record_id": "T1015",
+        "field": "email",
+        "issue": "Missing required value",
+        "value": ""
+      }
+    },
+    {
+      "review_type": "validation_failure",
+      "source": "support",
+      "record_reference": "T1015",
+      "details": {
+        "dataset": "support",
+        "row": 16,
+        "record_id": "T1015",
+        "field": "last_updated",
+        "issue": "Invalid date format; expected YYYY-MM-DD",
+        "value": "06/12/2026"
+      }
+    },
+    {
+      "review_type": "unmatched_record",
+      "source": "sales",
+      "record_reference": "c011",
+      "details": {
+        "source": "sales",
+        "source_position": 11,
+        "source_identifier": "c011",
+        "match_method": "customer_id",
+        "crm_record_positions": []
+      }
+    },
+    {
+      "review_type": "unmatched_record",
+      "source": "sales",
+      "record_reference": "c015",
+      "details": {
+        "source": "sales",
+        "source_position": 15,
+        "source_identifier": "c015",
+        "match_method": "customer_id",
+        "crm_record_positions": []
+      }
+    },
+    {
+      "review_type": "unmatched_record",
+      "source": "finance",
+      "record_reference": "c015",
+      "details": {
+        "source": "finance",
+        "source_position": 12,
+        "source_identifier": "c015",
+        "match_method": "customer_id",
+        "crm_record_positions": []
+      }
+    },
+    {
+      "review_type": "unmatched_record",
+      "source": "finance",
+      "record_reference": "missing",
+      "details": {
+        "source": "finance",
+        "source_position": 13,
+        "source_identifier": "missing",
+        "match_method": null,
+        "crm_record_positions": []
+      }
+    },
+    {
+      "review_type": "unmatched_record",
+      "source": "finance",
+      "record_reference": "c016",
+      "details": {
+        "source": "finance",
+        "source_position": 14,
+        "source_identifier": "c016",
+        "match_method": "customer_id",
+        "crm_record_positions": []
+      }
+    },
+    {
+      "review_type": "unmatched_record",
+      "source": "finance",
+      "record_reference": "c017",
+      "details": {
+        "source": "finance",
+        "source_position": 15,
+        "source_identifier": "c017",
+        "match_method": "customer_id",
+        "crm_record_positions": []
+      }
+    },
+    {
+      "review_type": "unmatched_record",
+      "source": "support",
+      "record_reference": "unknown.customer@email.com",
+      "details": {
+        "source": "support",
+        "source_position": 14,
+        "source_identifier": "unknown.customer@email.com",
+        "match_method": null,
+        "crm_record_positions": []
+      }
+    },
+    {
+      "review_type": "unmatched_record",
+      "source": "support",
+      "record_reference": "missing",
+      "details": {
+        "source": "support",
+        "source_position": 15,
+        "source_identifier": "missing",
+        "match_method": null,
+        "crm_record_positions": []
+      }
+    },
+    {
+      "review_type": "ambiguous_match",
+      "source": "sales",
+      "record_reference": "c010",
+      "details": {
+        "source": "sales",
+        "source_position": 10,
+        "source_identifier": "c010",
+        "match_method": "customer_id",
+        "crm_record_positions": [
+          10,
+          11
+        ]
+      }
+    },
+    {
+      "review_type": "ambiguous_match",
+      "source": "finance",
+      "record_reference": "c010",
+      "details": {
+        "source": "finance",
+        "source_position": 10,
+        "source_identifier": "c010",
+        "match_method": "customer_id",
+        "crm_record_positions": [
+          10,
+          11
+        ]
+      }
+    },
+    {
+      "review_type": "ambiguous_match",
+      "source": "support",
+      "record_reference": "maria.garcia@email.com",
+      "details": {
+        "source": "support",
+        "source_position": 10,
+        "source_identifier": "maria.garcia@email.com",
+        "match_method": "email",
+        "crm_record_positions": [
+          10,
+          11
+        ]
+      }
+    },
+    {
+      "review_type": "ambiguous_match",
+      "source": "support",
+      "record_reference": "maria.garcia@email.com",
+      "details": {
+        "source": "support",
+        "source_position": 11,
+        "source_identifier": "maria.garcia@email.com",
+        "match_method": "email",
+        "crm_record_positions": [
+          10,
+          11
+        ]
+      }
+    },
+    {
+      "review_type": "crm_duplicate_resolution",
+      "source": "crm",
+      "record_reference": "c010",
+      "details": {
+        "review_type": "crm_duplicate_resolution",
+        "customer_id": "c010",
+        "records_reviewed": 2,
+        "rule_applied": "Prefer newest CRM record and fill missing values from older CRM records",
+        "selected_last_updated": "2026-06-09",
+        "selected_address": "888 Garden Grove Boulevard, Garden Grove, CA"
+      }
+    },
+    {
+      "review_type": "missing_customer_id",
+      "source": "crm",
+      "record_reference": 12,
+      "details": {
+        "review_type": "missing_customer_id",
+        "source_position": 12,
+        "reason": "CRM record is missing customer_id",
+        "record": {
+          "customer_id": "",
+          "name": "Kevin Lee",
+          "email": "kevin.lee@email.com",
+          "phone": "626-555-0111",
+          "address": "100 Valley Blvd, Pasadena, CA",
+          "status": "active",
+          "last_updated": "2026-06-10"
+        }
+      }
+    }
+  ],
+  "source_matching_summary": {
+    "sales": {
+      "total_records": 15,
+      "matched": 12,
+      "unmatched": 2,
+      "ambiguous": 1
+    },
+    "finance": {
+      "total_records": 15,
+      "matched": 10,
+      "unmatched": 4,
+      "ambiguous": 1
+    },
+    "support": {
+      "total_records": 15,
+      "matched": 11,
+      "unmatched": 2,
+      "ambiguous": 2
+    }
+  },
+  "unified_customer_summary": {
+    "raw_crm_records": 15,
+    "unified_customers": 13,
+    "customers_with_sales": 12,
+    "customers_with_finance": 11,
+    "customers_with_support": 11
   },
   "business_rules": [
     {
@@ -554,611 +925,292 @@
       "reason": "Absence of one department's data should not delete a valid customer from another system."
     }
   ],
-  "unified_profile_result": {
-    "customers": [
-      {
-        "name": "John Smith",
-        "email": "john.smith@email.com",
-        "phone": "949-555-0101",
-        "address": "123 Main St, Irvine, CA",
-        "status": "active",
-        "monthly_income": 7200,
-        "credit_score": 745,
-        "debt": 15000,
-        "risk_status": "low",
-        "total_orders": 12,
-        "lifetime_value": 2450.75,
-        "last_purchase": "2026-05-25",
-        "last_ticket": "T1001",
-        "ticket_status": "resolved",
-        "customer_sentiment": "positive",
-        "support_priority": "low",
-        "customer_id": "C001",
-        "has_sales_record": true,
-        "has_finance_record": true,
-        "has_support_record": true
-      },
-      {
-        "name": "Sarah Johnson",
-        "email": "sarah.johnson@email.com",
-        "phone": "714-555-0102",
-        "address": "456 Oak Ave, Anaheim, CA",
-        "status": "active",
-        "monthly_income": 5400,
-        "credit_score": 680,
-        "debt": 22000,
-        "risk_status": "medium",
-        "total_orders": 5,
-        "lifetime_value": 875.5,
-        "last_purchase": "2026-05-20",
-        "last_ticket": "T1002",
-        "ticket_status": "open",
-        "customer_sentiment": "neutral",
-        "support_priority": "medium",
-        "customer_id": "C002",
-        "has_sales_record": true,
-        "has_finance_record": true,
-        "has_support_record": true
-      },
-      {
-        "name": "Michael Brown",
-        "email": "michael.brown@email.com",
-        "phone": "562-555-0103",
-        "address": "789 Pine Rd, Long Beach, CA",
-        "status": "active",
-        "monthly_income": 9100,
-        "credit_score": 790,
-        "debt": 8000,
-        "risk_status": "low",
-        "total_orders": 18,
-        "lifetime_value": 5320.0,
-        "last_purchase": "2026-06-01",
-        "last_ticket": "T1003",
-        "ticket_status": "resolved",
-        "customer_sentiment": "positive",
-        "support_priority": "low",
-        "customer_id": "C003",
-        "has_sales_record": true,
-        "has_finance_record": true,
-        "has_support_record": true
-      },
-      {
-        "name": "Emily Davis",
-        "email": "emily.davis@email.com",
-        "phone": "949-555-0104",
-        "address": "321 Beach Blvd, Huntington Beach, CA",
-        "status": "inactive",
-        "monthly_income": 4300,
-        "credit_score": 610,
-        "debt": 38000,
-        "risk_status": "high",
-        "total_orders": 2,
-        "lifetime_value": 199.99,
-        "last_purchase": "2025-11-18",
-        "last_ticket": "T1004",
-        "ticket_status": "closed",
-        "customer_sentiment": "negative",
-        "support_priority": "high",
-        "customer_id": "C004",
-        "has_sales_record": true,
-        "has_finance_record": true,
-        "has_support_record": true
-      },
-      {
-        "name": "David Wilson",
-        "email": "david.wilson@email.com",
-        "phone": "310-555-0105",
-        "address": "654 Sunset Blvd, Los Angeles, CA",
-        "status": "active",
-        "monthly_income": 8300,
-        "credit_score": 720,
-        "debt": 18000,
-        "risk_status": "low",
-        "total_orders": 28,
-        "lifetime_value": 9240.25,
-        "last_purchase": "2026-06-06",
-        "last_ticket": "T1005",
-        "ticket_status": "open",
-        "customer_sentiment": "negative",
-        "support_priority": "high",
-        "customer_id": "C005",
-        "has_sales_record": true,
-        "has_finance_record": true,
-        "has_support_record": true
-      },
-      {
-        "name": "Lisa Martinez",
-        "email": "lisa.martinez@email.com",
-        "phone": "951-555-0106",
-        "address": "987 Canyon Dr, Riverside, CA",
-        "status": "active",
-        "monthly_income": 6100,
+  "field_lineage": [
+    {
+      "customer_id": "C001",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": "finance",
+        "credit_score": "finance",
+        "debt": "finance",
+        "risk_status": "finance",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C002",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": "finance",
+        "credit_score": "finance",
+        "debt": "finance",
+        "risk_status": "finance",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C003",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": "finance",
+        "credit_score": "finance",
+        "debt": "finance",
+        "risk_status": "finance",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C004",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": "finance",
+        "credit_score": "finance",
+        "debt": "finance",
+        "risk_status": "finance",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C005",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": "finance",
+        "credit_score": "finance",
+        "debt": "finance",
+        "risk_status": "finance",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C006",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": "finance",
         "credit_score": null,
-        "debt": 14000,
-        "risk_status": "unknown",
-        "total_orders": 9,
-        "lifetime_value": 1650.0,
-        "last_purchase": "2026-05-30",
-        "last_ticket": "T1006",
-        "ticket_status": "pending",
-        "customer_sentiment": "neutral",
-        "support_priority": "medium",
-        "customer_id": "C006",
-        "has_sales_record": true,
-        "has_finance_record": true,
-        "has_support_record": true
-      },
-      {
-        "name": "Robert Taylor",
-        "email": "robert.taylor@email.com",
-        "phone": "909-555-0107",
-        "address": "246 Mountain View, Ontario, CA",
-        "status": "active",
-        "monthly_income": 4800,
-        "credit_score": 655,
-        "debt": 26000,
-        "risk_status": "medium",
-        "total_orders": 14,
-        "lifetime_value": 3100.4,
-        "last_purchase": "2026-06-02",
-        "last_ticket": "T1007",
-        "ticket_status": "resolved",
-        "customer_sentiment": "positive",
-        "support_priority": "low",
-        "customer_id": "C007",
-        "has_sales_record": true,
-        "has_finance_record": true,
-        "has_support_record": true
-      },
-      {
-        "name": "Jennifer Anderson",
-        "email": "jennifer.anderson@email.com",
+        "debt": "finance",
+        "risk_status": "finance",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C007",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": "finance",
+        "credit_score": "finance",
+        "debt": "finance",
+        "risk_status": "finance",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C008",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
         "phone": null,
-        "address": "135 Harbor Dr, Newport Beach, CA",
-        "status": "active",
-        "monthly_income": 6900,
-        "credit_score": 701,
-        "debt": 12000,
-        "risk_status": "low",
-        "total_orders": 3,
-        "lifetime_value": 425.75,
-        "last_purchase": "2026-04-15",
-        "last_ticket": "T1008",
-        "ticket_status": "open",
-        "customer_sentiment": "neutral",
-        "support_priority": "medium",
-        "customer_id": "C008",
-        "has_sales_record": true,
-        "has_finance_record": true,
-        "has_support_record": true
-      },
-      {
-        "name": "James Thomas",
-        "email": "james.thomas@email.com",
-        "phone": "9495550109",
-        "address": "777 Corporate Dr, Irvine, CA",
-        "status": "active",
-        "monthly_income": 10500,
-        "credit_score": 850,
-        "debt": 5000,
-        "risk_status": "low",
-        "total_orders": 21,
-        "lifetime_value": 6780.9,
-        "last_purchase": "2026-06-07",
-        "last_ticket": "T1009",
-        "ticket_status": "resolved",
-        "customer_sentiment": "positive",
-        "support_priority": "low",
-        "customer_id": "C009",
-        "has_sales_record": true,
-        "has_finance_record": true,
-        "has_support_record": true
-      },
-      {
-        "name": "Maria Garcia",
-        "email": "maria.garcia@email.com",
-        "phone": "714-555-0110",
-        "address": "888 Garden Grove Boulevard, Garden Grove, CA",
-        "status": "active",
-        "monthly_income": 3900,
-        "credit_score": 590,
-        "debt": 42000,
-        "risk_status": "high",
-        "total_orders": 7,
-        "lifetime_value": 1200.0,
-        "last_purchase": "2026-05-29",
-        "last_ticket": "T1011",
-        "ticket_status": "pending",
-        "customer_sentiment": "neutral",
-        "support_priority": "medium",
-        "customer_id": "C010",
-        "has_sales_record": true,
-        "has_finance_record": true,
-        "has_support_record": true
-      },
-      {
-        "name": "Amanda White",
-        "email": "amanda.whiteemail.com",
-        "phone": "949-555-0112",
-        "address": "200 Technology Dr, Irvine, CA",
-        "status": "active",
-        "monthly_income": "6500",
-        "credit_score": 720,
-        "debt": 19000,
-        "risk_status": "low",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": "finance",
+        "credit_score": "finance",
+        "debt": "finance",
+        "risk_status": "finance",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C009",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": "finance",
+        "credit_score": "finance",
+        "debt": "finance",
+        "risk_status": "finance",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C010",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": "finance",
+        "credit_score": "finance",
+        "debt": "finance",
+        "risk_status": "finance",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C012",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
+        "monthly_income": "finance",
+        "credit_score": "finance",
+        "debt": "finance",
+        "risk_status": "finance",
         "total_orders": null,
         "lifetime_value": null,
         "last_purchase": null,
-        "last_ticket": "T1013",
-        "ticket_status": "resolved",
-        "customer_sentiment": "positive",
-        "support_priority": "low",
-        "customer_id": "C012",
-        "has_sales_record": false,
-        "has_finance_record": true,
-        "has_support_record": true
-      },
-      {
-        "name": "Daniel Harris",
-        "email": "daniel.harris@email.com",
-        "phone": "555-INVALID",
-        "address": "12 Lake View, Santa Ana, CA",
-        "status": "active",
+        "last_ticket": "support",
+        "ticket_status": "support",
+        "customer_sentiment": "support",
+        "support_priority": "support",
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C013",
+      "field_sources": {
+        "name": "crm",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
         "monthly_income": null,
         "credit_score": null,
         "debt": null,
         "risk_status": null,
-        "total_orders": 10,
-        "lifetime_value": 2500.0,
-        "last_purchase": "06/08/2026",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
         "last_ticket": null,
         "ticket_status": null,
         "customer_sentiment": null,
         "support_priority": null,
-        "customer_id": "C013",
-        "has_sales_record": true,
-        "has_finance_record": false,
-        "has_support_record": false
-      },
-      {
+        "customer_id": "crm"
+      }
+    },
+    {
+      "customer_id": "C014",
+      "field_sources": {
         "name": null,
-        "email": "missing.name@email.com",
-        "phone": "949-555-0114",
-        "address": "450 Market St, Costa Mesa, CA",
-        "status": "active",
+        "email": "crm",
+        "phone": "crm",
+        "address": "crm",
+        "status": "crm",
         "monthly_income": null,
         "credit_score": null,
         "debt": null,
         "risk_status": null,
-        "total_orders": -2,
-        "lifetime_value": -150.0,
-        "last_purchase": "2026-06-01",
+        "total_orders": "sales",
+        "lifetime_value": "sales",
+        "last_purchase": "sales",
         "last_ticket": null,
         "ticket_status": null,
         "customer_sentiment": null,
         "support_priority": null,
-        "customer_id": "C014",
-        "has_sales_record": true,
-        "has_finance_record": false,
-        "has_support_record": false
+        "customer_id": "crm"
       }
-    ],
-    "field_lineage": [
-      {
-        "customer_id": "C001",
-        "field_sources": {
-          "name": "crm",
-          "email": "crm",
-          "phone": "crm",
-          "address": "crm",
-          "status": "crm",
-          "monthly_income": "finance",
-          "credit_score": "finance",
-          "debt": "finance",
-          "risk_status": "finance",
-          "total_orders": "sales",
-          "lifetime_value": "sales",
-          "last_purchase": "sales",
-          "last_ticket": "support",
-          "ticket_status": "support",
-          "customer_sentiment": "support",
-          "support_priority": "support",
-          "customer_id": "crm"
-        }
-      },
-      {
-        "customer_id": "C002",
-        "field_sources": {
-          "name": "crm",
-          "email": "crm",
-          "phone": "crm",
-          "address": "crm",
-          "status": "crm",
-          "monthly_income": "finance",
-          "credit_score": "finance",
-          "debt": "finance",
-          "risk_status": "finance",
-          "total_orders": "sales",
-          "lifetime_value": "sales",
-          "last_purchase": "sales",
-          "last_ticket": "support",
-          "ticket_status": "support",
-          "customer_sentiment": "support",
-          "support_priority": "support",
-          "customer_id": "crm"
-        }
-      },
-      {
-        "customer_id": "C003",
-        "field_sources": {
-          "name": "crm",
-          "email": "crm",
-          "phone": "crm",
-          "address": "crm",
-          "status": "crm",
-          "monthly_income": "finance",
-          "credit_score": "finance",
-          "debt": "finance",
-          "risk_status": "finance",
-          "total_orders": "sales",
-          "lifetime_value": "sales",
-          "last_purchase": "sales",
-          "last_ticket": "support",
-          "ticket_status": "support",
-          "customer_sentiment": "support",
-          "support_priority": "support",
-          "customer_id": "crm"
-        }
-      },
-      {
-        "customer_id": "C004",
-        "field_sources": {
-          "name": "crm",
-          "email": "crm",
-          "phone": "crm",
-          "address": "crm",
-          "status": "crm",
-          "monthly_income": "finance",
-          "credit_score": "finance",
-          "debt": "finance",
-          "risk_status": "finance",
-          "total_orders": "sales",
-          "lifetime_value": "sales",
-          "last_purchase": "sales",
-          "last_ticket": "support",
-          "ticket_status": "support",
-          "customer_sentiment": "support",
-          "support_priority": "support",
-          "customer_id": "crm"
-        }
-      },
-      {
-        "customer_id": "C005",
-        "field_sources": {
-          "name": "crm",
-          "email": "crm",
-          "phone": "crm",
-          "address": "crm",
-          "status": "crm",
-          "monthly_income": "finance",
-          "credit_score": "finance",
-          "debt": "finance",
-          "risk_status": "finance",
-          "total_orders": "sales",
-          "lifetime_value": "sales",
-          "last_purchase": "sales",
-          "last_ticket": "support",
-          "ticket_status": "support",
-          "customer_sentiment": "support",
-          "support_priority": "support",
-          "customer_id": "crm"
-        }
-      },
-      {
-        "customer_id": "C006",
-        "field_sources": {
-          "name": "crm",
-          "email": "crm",
-          "phone": "crm",
-          "address": "crm",
-          "status": "crm",
-          "monthly_income": "finance",
-          "credit_score": null,
-          "debt": "finance",
-          "risk_status": "finance",
-          "total_orders": "sales",
-          "lifetime_value": "sales",
-          "last_purchase": "sales",
-          "last_ticket": "support",
-          "ticket_status": "support",
-          "customer_sentiment": "support",
-          "support_priority": "support",
-          "customer_id": "crm"
-        }
-      },
-      {
-        "customer_id": "C007",
-        "field_sources": {
-          "name": "crm",
-          "email": "crm",
-          "phone": "crm",
-          "address": "crm",
-          "status": "crm",
-          "monthly_income": "finance",
-          "credit_score": "finance",
-          "debt": "finance",
-          "risk_status": "finance",
-          "total_orders": "sales",
-          "lifetime_value": "sales",
-          "last_purchase": "sales",
-          "last_ticket": "support",
-          "ticket_status": "support",
-          "customer_sentiment": "support",
-          "support_priority": "support",
-          "customer_id": "crm"
-        }
-      },
-      {
-        "customer_id": "C008",
-        "field_sources": {
-          "name": "crm",
-          "email": "crm",
-          "phone": null,
-          "address": "crm",
-          "status": "crm",
-          "monthly_income": "finance",
-          "credit_score": "finance",
-          "debt": "finance",
-          "risk_status": "finance",
-          "total_orders": "sales",
-          "lifetime_value": "sales",
-          "last_purchase": "sales",
-          "last_ticket": "support",
-          "ticket_status": "support",
-          "customer_sentiment": "support",
-          "support_priority": "support",
-          "customer_id": "crm"
-        }
-      },
-      {
-        "customer_id": "C009",
-        "field_sources": {
-          "name": "crm",
-          "email": "crm",
-          "phone": "crm",
-          "address": "crm",
-          "status": "crm",
-          "monthly_income": "finance",
-          "credit_score": "finance",
-          "debt": "finance",
-          "risk_status": "finance",
-          "total_orders": "sales",
-          "lifetime_value": "sales",
-          "last_purchase": "sales",
-          "last_ticket": "support",
-          "ticket_status": "support",
-          "customer_sentiment": "support",
-          "support_priority": "support",
-          "customer_id": "crm"
-        }
-      },
-      {
-        "customer_id": "C010",
-        "field_sources": {
-          "name": "crm",
-          "email": "crm",
-          "phone": "crm",
-          "address": "crm",
-          "status": "crm",
-          "monthly_income": "finance",
-          "credit_score": "finance",
-          "debt": "finance",
-          "risk_status": "finance",
-          "total_orders": "sales",
-          "lifetime_value": "sales",
-          "last_purchase": "sales",
-          "last_ticket": "support",
-          "ticket_status": "support",
-          "customer_sentiment": "support",
-          "support_priority": "support",
-          "customer_id": "crm"
-        }
-      },
-      {
-        "customer_id": "C012",
-        "field_sources": {
-          "name": "crm",
-          "email": "crm",
-          "phone": "crm",
-          "address": "crm",
-          "status": "crm",
-          "monthly_income": "finance",
-          "credit_score": "finance",
-          "debt": "finance",
-          "risk_status": "finance",
-          "total_orders": null,
-          "lifetime_value": null,
-          "last_purchase": null,
-          "last_ticket": "support",
-          "ticket_status": "support",
-          "customer_sentiment": "support",
-          "support_priority": "support",
-          "customer_id": "crm"
-        }
-      },
-      {
-        "customer_id": "C013",
-        "field_sources": {
-          "name": "crm",
-          "email": "crm",
-          "phone": "crm",
-          "address": "crm",
-          "status": "crm",
-          "monthly_income": null,
-          "credit_score": null,
-          "debt": null,
-          "risk_status": null,
-          "total_orders": "sales",
-          "lifetime_value": "sales",
-          "last_purchase": "sales",
-          "last_ticket": null,
-          "ticket_status": null,
-          "customer_sentiment": null,
-          "support_priority": null,
-          "customer_id": "crm"
-        }
-      },
-      {
-        "customer_id": "C014",
-        "field_sources": {
-          "name": null,
-          "email": "crm",
-          "phone": "crm",
-          "address": "crm",
-          "status": "crm",
-          "monthly_income": null,
-          "credit_score": null,
-          "debt": null,
-          "risk_status": null,
-          "total_orders": "sales",
-          "lifetime_value": "sales",
-          "last_purchase": "sales",
-          "last_ticket": null,
-          "ticket_status": null,
-          "customer_sentiment": null,
-          "support_priority": null,
-          "customer_id": "crm"
-        }
-      }
-    ],
-    "crm_resolution_decisions": [
-      {
-        "customer_id": "c010",
-        "records_reviewed": 2,
-        "rule_applied": "Prefer newest CRM record and fill missing values from older CRM records",
-        "selected_last_updated": "2026-06-09",
-        "selected_address": "888 Garden Grove Boulevard, Garden Grove, CA"
-      },
-      {
-        "source_position": 12,
-        "reason": "CRM record is missing customer_id",
-        "record": {
-          "customer_id": "",
-          "name": "Kevin Lee",
-          "email": "kevin.lee@email.com",
-          "phone": "626-555-0111",
-          "address": "100 Valley Blvd, Pasadena, CA",
-          "status": "active",
-          "last_updated": "2026-06-10"
-        }
-      }
-    ],
-    "summary": {
-      "raw_crm_records": 15,
-      "unified_customers": 13,
-      "customers_with_sales": 12,
-      "customers_with_finance": 11,
-      "customers_with_support": 11
     }
-  }
+  ]
 }
