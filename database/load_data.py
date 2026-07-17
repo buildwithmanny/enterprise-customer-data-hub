@@ -21,11 +21,15 @@ from postgres_loader import (
     execute_schema,
     load_customers_to_postgres,
     run_basic_queries,
-    test_database_connection
+    test_database_connection,
+    verify_schema_objects
 )
 
 
-DATA_DIRECTORY = PROJECT_ROOT / "data"
+DATA_DIRECTORY = (
+    PROJECT_ROOT / "data"
+)
+
 SCHEMA_PATH = (
     PROJECT_ROOT
     / "database"
@@ -35,12 +39,15 @@ SCHEMA_PATH = (
 
 def main() -> None:
     """
-    Build the canonical profiles and load them into
-    PostgreSQL.
+    Build the canonical customer profiles, create the
+    PostgreSQL schema, load the data, verify database
+    objects, and run basic SQL queries.
     """
 
     try:
         test_database_connection()
+
+        print("\nLoading source datasets...")
 
         crm_records = load_csv(
             DATA_DIRECTORY / "crm.csv"
@@ -58,6 +65,26 @@ def main() -> None:
             DATA_DIRECTORY / "support.csv"
         )
 
+        print(
+            f"CRM records:     "
+            f"{len(crm_records)}"
+        )
+
+        print(
+            f"Sales records:   "
+            f"{len(sales_records)}"
+        )
+
+        print(
+            f"Finance records: "
+            f"{len(finance_records)}"
+        )
+
+        print(
+            f"Support records: "
+            f"{len(support_records)}"
+        )
+
         unified_result = (
             build_unified_customer_profiles(
                 crm_records,
@@ -71,6 +98,11 @@ def main() -> None:
             "customers"
         ]
 
+        print(
+            f"\nCanonical customer profiles: "
+            f"{len(customers)}"
+        )
+
         execute_schema(
             SCHEMA_PATH
         )
@@ -79,18 +111,20 @@ def main() -> None:
             customers
         )
 
+        verify_schema_objects()
+
         run_basic_queries()
 
         print(f"\n{'=' * 60}")
         print(
-            "Day 6 PostgreSQL load completed "
-            "successfully."
+            "Day 11 PostgreSQL schema improvements "
+            "completed successfully."
         )
         print(f"{'=' * 60}")
 
     except Exception as error:
         print(
-            f"\nDay 6 database load failed: "
+            f"\nDay 11 database workflow failed: "
             f"{error}"
         )
 
