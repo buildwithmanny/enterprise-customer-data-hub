@@ -10,7 +10,9 @@ The pipeline validates source data, identifies duplicates, matches customer reco
 
 ## Project Status
 
-Version 1 is functional.
+Version 1 is complete.
+
+The project implements an end to end customer data integration workflow from multi source ingestion and validation through customer matching, consolidation, PostgreSQL storage, automated testing, and SQL analytics.
 
 Current capabilities include:
 
@@ -19,13 +21,15 @@ Current capabilities include:
 - Detecting missing values and invalid formats
 - Identifying duplicate customer records
 - Matching records using customer ID, email, and name
-- Applying source-specific merge rules
+- Applying source specific merge rules
+- Handling messy and incomplete source data
 - Generating unified customer profiles
 - Exporting validation and merge reports
 - Loading consolidated records into PostgreSQL
-- Running basic SQL queries across related tables
-
-Automated testing, improved reporting, database constraints, analytics, and final documentation will be added during the next project phase.
+- Enforcing database constraints and relationships
+- Using indexes to support database queries
+- Running SQL analytics across related tables
+- Testing duplicate detection, merge logic, missing records, and messy-data scenarios
 
 ## Data Sources
 
@@ -79,13 +83,13 @@ Run SQL Queries and Generate Reports
 
 ## Business Rules
 
-The first version uses the following rules:
+The current version uses the following rules:
 
 - CRM is the primary source for customer identity.
 - CRM supplies customer names and contact information.
 - The newest CRM record supplies the customer address.
 - Finance supplies income, debt, credit score, and risk information.
-- Sales supplies order and lifetime-value metrics.
+- Sales supplies order and lifetime value metrics.
 - Customer Support supplies the most recent support status.
 - Missing source information remains blank rather than deleting the customer.
 - Ambiguous matches are flagged rather than silently resolved.
@@ -101,6 +105,7 @@ enterprise-customer-data-hub/
 │   ├── sales.csv
 │   └── support.csv
 ├── database/
+│   ├── analytics.sql
 │   ├── load_data.py
 │   └── schema.sql
 ├── reports/
@@ -113,8 +118,12 @@ enterprise-customer-data-hub/
 │   ├── main.py
 │   ├── merger.py
 │   ├── postgres_loader.py
+│   ├── reporting.py
 │   └── validator.py
 ├── tests/
+│   ├── conftest.py
+│   ├── test_merger.py
+│   └── test_messy_data.py
 ├── .env.example
 ├── .gitignore
 ├── requirements.txt
@@ -130,23 +139,24 @@ enterprise-customer-data-hub/
 - JSON
 - Psycopg
 - python-dotenv
+- Pytest
 - Git and GitHub
 
 ## Setup
 
-### 1. Install dependencies
+### 1. Install Dependencies
 
 ```bash
 python3 -m pip install -r requirements.txt
 ```
 
-### 2. Create the PostgreSQL database
+### 2. Create the PostgreSQL Database
 
 ```sql
 CREATE DATABASE customer_data_hub;
 ```
 
-### 3. Create the local environment file
+### 3. Create the Local Environment File
 
 Copy `.env.example` to `.env` and add your local PostgreSQL password.
 
@@ -172,6 +182,14 @@ This generates:
 - `reports/merge_summary.json`
 - `reports/merged_customers.csv`
 
+## Run Automated Tests
+
+```bash
+python3 -m pytest -v
+```
+
+The test suite verifies key integration behavior, including duplicate detection, merge rules, missing records, and messy-data scenarios.
+
 ## Load Data into PostgreSQL
 
 ```bash
@@ -192,24 +210,56 @@ This:
 - `customer_finance`
 - `customer_support`
 
-The department-specific tables reference the main `customers` table through foreign keys.
+The department-specific tables reference the main `customers` table through foreign keys. Database constraints and indexes help maintain data integrity and support efficient queries.
+
+## SQL Analytics
+
+The PostgreSQL database supports analytical queries across the consolidated customer data, including:
+
+- Customers missing Finance records
+- Duplicate customer emails
+- Customers with the highest lifetime value
+- Average customer credit score
+- Cross department analysis using SQL joins
+
+## Performance and Scalability
+
+The current project uses small simulated datasets, but processing one million or more customer records would require changes to how data is processed and updated.
+
+### Batch Processing
+
+Instead of loading entire datasets into memory at once, source records could be processed in batches. This would reduce memory usage and allow large datasets to move through validation, transformation, and database loading in manageable groups.
+
+### Indexing
+
+Indexes on frequently searched and joined fields such as customer ID and email would become increasingly important as the database grows. Indexes improve lookup and join performance, although they also introduce additional storage and write overhead.
+
+### Incremental Updates
+
+Rather than rebuilding every customer profile during each pipeline run, the system could identify records that were added or changed since the previous run. Processing only new or updated records would reduce unnecessary computation and database writes.
+
+### Database Joins
+
+At larger scale, PostgreSQL should handle relational joins between customer and department specific tables rather than relying entirely on Python to combine large datasets in memory. Query performance would depend on appropriate indexes, join keys, and database design.
+
+Together, these approaches would allow the pipeline to evolve from a small batch integration project toward a system capable of processing larger enterprise datasets efficiently.
 
 ## Current Limitations
 
 - CRM remains the primary source of customer identity.
-- Source-only records are reported but not automatically promoted to canonical customers.
+- Source only records are reported but not automatically promoted to canonical customers.
 - Name matching is limited and intentionally conservative.
 - Some invalid source values are retained in validation reports rather than automatically corrected.
-- Automated tests have not yet been added.
+- The pipeline currently processes small local datasets rather than production scale data.
+- Incremental processing has not yet been implemented.
 
-## Next Phase
+## Future Improvements
 
-Planned improvements include:
+Potential future improvements include:
 
-- Automated tests
-- Improved error reporting
-- Additional messy-data scenarios
-- Stronger PostgreSQL constraints and indexes
-- SQL analytics
-- Architecture and entity-relationship diagrams
-- Performance and scalability documentation
+- Incremental data processing
+- Batch processing for larger datasets
+- Architecture and entity relationship diagrams
+- Expanded data quality monitoring
+- Additional integration and edge case testing
+- More advanced customer matching strategies
